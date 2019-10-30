@@ -6,14 +6,13 @@
         <div class="row justify-content-center">
             <div class="col-xl-5">
                 <div class="section_tittle text-center">
-                    <p>Courses</p>
-                    <h2>Newest Courses</h2>
+                    <h2>Courses</h2>
                 </div>
             </div>
         </div>
         <div class="row">
-            @foreach($newestCourses as $course)
-                <div class="col-sm-6 col-lg-4">
+            @foreach($courses as $course)
+                <div class="col-sm-6 col-lg-4 mb-3">
                     <div class="single_special_cource">
                         <img src="{{ optional($course->photo)->getUrl() ?? asset('img/no_image.png') }}" class="special_img" alt="">
                         <div class="special_cource_text">
@@ -39,35 +38,12 @@
                 </div>
             @endforeach
         </div>
-    </div>
-</section>
-
-<section class="blog_part section_padding">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-5">
-                <div class="section_tittle text-center">
-                    <p>Institutions</p>
-                    <h2>Random Institutions</h2>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="float-right">
+                    {{ $courses->appends(request()->query())->links() }}
                 </div>
             </div>
-        </div>
-        <div class="row">
-            @foreach($randomInstitutions as $institution)
-                <div class="col-sm-6 col-lg-4 col-xl-4">
-                    <div class="single-home-blog">
-                        <div class="card">
-                            <img src="{{ optional($institution->logo)->url ?? asset('img/no_image.png') }}" class="card-img-top" alt="{{ $institution->name }}">
-                            <div class="card-body">
-                                <a href="blog.html">
-                                    <h5 class="card-title">{{ $institution->name }}</h5>
-                                </a>
-                                <p>{{ Str::limit($institution->description, 100) }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
         </div>
     </div>
 </section>

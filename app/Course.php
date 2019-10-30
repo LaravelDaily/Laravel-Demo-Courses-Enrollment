@@ -70,4 +70,18 @@ class Course extends Model implements HasMedia
     {
         return $this->price ? '$'.number_format($this->price, 2) : 'FREE';
     }
+
+    public function scopeSearchResults($query)
+    {
+        $query->when(request('discipline'), function($query) {
+                $query->whereHas('disciplines', function($query) {
+                    $query->whereId(request('discipline'));
+                });
+            })
+            ->when(request('institution'), function($query) {
+                $query->whereHas('institution', function($query) {
+                    $query->whereId(request('institution'));
+                });
+            });
+    }
 }
