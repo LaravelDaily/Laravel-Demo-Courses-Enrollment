@@ -11,7 +11,7 @@ Route::get('/home', function () {
 Auth::routes(['register' => false]);
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::resource('courses', 'CourseController')->only(['index']);
+Route::resource('courses', 'CourseController')->only(['index', 'show']);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');

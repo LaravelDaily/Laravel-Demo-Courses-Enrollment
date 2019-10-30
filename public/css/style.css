@@ -2404,6 +2404,16 @@ ul {
 }
 
 /* line 261, E:/172 Etrain Education/172_Etrain_Education_html/sass/_menu.scss */
+.home_menu .logo_1 {
+  display: none;
+}
+
+/* line 264, E:/172 Etrain Education/172_Etrain_Education_html/sass/_menu.scss */
+.home_menu .logo_2 {
+  display: inherit;
+}
+
+/* line 261, E:/172 Etrain Education/172_Etrain_Education_html/sass/_menu.scss */
 .single_page_menu .logo_2 {
   display: none;
 }

@@ -17,10 +17,10 @@
                         <img src="{{ optional($course->photo)->getUrl() ?? asset('img/no_image.png') }}" class="special_img" alt="">
                         <div class="special_cource_text">
                             @foreach($course->disciplines as $discipline)
-                                <a href="course-details.html" class="btn_4 mr-1 mb-1">{{ $discipline->name }}</a>
+                                <a href="{{ route('courses.index') }}?discipline={{ $discipline->id }}" class="btn_4 mr-1 mb-1">{{ $discipline->name }}</a>
                             @endforeach
                             <h4>{{ $course->getPrice() }}</h4>
-                            <a href="course-details.html"><h3>{{ $course->name }}</h3></a>
+                            <a href="{{ route('courses.show', $course->id) }}"><h3>{{ $course->name }}</h3></a>
                             <p>{{ Str::limit($course->description, 100) }}</p>
                             @if($course->institution)
                                 <div class="author_info">

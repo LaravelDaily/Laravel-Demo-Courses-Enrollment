@@ -11,6 +11,16 @@ class CourseController extends Controller
         $courses = Course::searchResults()
             ->paginate(6);
 
-        return view('courses', compact('courses'));
+        $breadcrumb = "Courses";
+
+        return view('courses.index', compact(['courses', 'breadcrumb']));
+    }
+
+    public function show(Course $course)
+    {
+        $course->load('institution');
+        $breadcrumb = $course->name;
+
+        return view('courses.show', compact(['course', 'breadcrumb']));
     }
 }

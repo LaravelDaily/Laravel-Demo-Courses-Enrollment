@@ -20,6 +20,8 @@
 <body>
     @include('partials.header')
 
+    @includeWhen($breadcrumb ?? null, 'partials.breadcrumb')
+
     @yield('content')
 
     @include('partials.footer')
