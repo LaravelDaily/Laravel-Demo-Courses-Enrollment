@@ -63,7 +63,7 @@
                     {{ trans('cruds.user.fields.roles_helper') }}
                 </p>
             </div>
-            <div class="form-group {{ $errors->has('institution_id') ? 'has-error' : '' }}">
+            <div class="form-group {{ $errors->has('institution_id') ? 'has-error' : '' }}" id="institutionGroup" style="{{ in_array(2, old('roles', [])) ? '' : 'display:none'}}">
                 <label for="institution">{{ trans('cruds.user.fields.institution') }}</label>
                 <select name="institution_id" id="institution" class="form-control select2">
                     @foreach($institutions as $id => $institution)
@@ -84,4 +84,17 @@
 
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+$(document).ready(function() {
+    $('#roles').change(function() {
+        if($("#roles option:selected:contains('Institution')").val())
+            $("#institutionGroup:hidden").show(150);
+        else
+            $("#institutionGroup:visible").hide(150);
+    });
+});
+</script>
 @endsection
