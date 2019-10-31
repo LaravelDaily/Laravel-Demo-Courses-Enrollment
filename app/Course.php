@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Scopes\CourseScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
@@ -33,6 +34,13 @@ class Course extends Model implements HasMedia
         'description',
         'institution_id',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new CourseScope);
+    }
 
     public function registerMediaConversions(Media $media = null)
     {

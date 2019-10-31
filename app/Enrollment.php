@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Scopes\EnrollmentScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -31,6 +32,13 @@ class Enrollment extends Model
         'accepted' => 'Accepted',
         'rejected' => 'Rejected',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new EnrollmentScope);
+    }
 
     public function user()
     {

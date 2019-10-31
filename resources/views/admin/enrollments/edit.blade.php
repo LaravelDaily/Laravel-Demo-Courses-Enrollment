@@ -10,19 +10,23 @@
         <form action="{{ route("admin.enrollments.update", [$enrollment->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="form-group {{ $errors->has('user_id') ? 'has-error' : '' }}">
-                <label for="user">{{ trans('cruds.enrollment.fields.user') }}*</label>
-                <select name="user_id" id="user" class="form-control select2" required>
-                    @foreach($users as $id => $user)
-                        <option value="{{ $id }}" {{ (isset($enrollment) && $enrollment->user ? $enrollment->user->id : old('user_id')) == $id ? 'selected' : '' }}>{{ $user }}</option>
-                    @endforeach
-                </select>
-                @if($errors->has('user_id'))
-                    <em class="invalid-feedback">
-                        {{ $errors->first('user_id') }}
-                    </em>
-                @endif
-            </div>
+            @if(auth()->user()->isInstitution())
+                <input type="hidden" name="user_id" value="{{ (isset($enrollment) && $enrollment->user) ? $enrollment->user->id : '' }}">
+            @else
+                <div class="form-group {{ $errors->has('user_id') ? 'has-error' : '' }}">
+                    <label for="user">{{ trans('cruds.enrollment.fields.user') }}*</label>
+                    <select name="user_id" id="user" class="form-control select2" required>
+                        @foreach($users as $id => $user)
+                            <option value="{{ $id }}" {{ (isset($enrollment) && $enrollment->user ? $enrollment->user->id : old('user_id')) == $id ? 'selected' : '' }}>{{ $user }}</option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('user_id'))
+                        <em class="invalid-feedback">
+                            {{ $errors->first('user_id') }}
+                        </em>
+                    @endif
+                </div>
+            @endif
             <div class="form-group {{ $errors->has('course_id') ? 'has-error' : '' }}">
                 <label for="course">{{ trans('cruds.enrollment.fields.course') }}*</label>
                 <select name="course_id" id="course" class="form-control select2" required>

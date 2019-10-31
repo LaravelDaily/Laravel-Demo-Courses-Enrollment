@@ -77,4 +77,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Institution::class, 'institution_id');
     }
+
+    public function isInstitution()
+    {
+        return $this->roles->contains(2);
+    }
 }

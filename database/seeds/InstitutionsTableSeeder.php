@@ -1,6 +1,7 @@
 <?php
 
 use App\Institution;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class InstitutionsTableSeeder extends Seeder
@@ -19,5 +20,6 @@ class InstitutionsTableSeeder extends Seeder
             $institution = Institution::create(['name' => $faker->unique()->company, 'description' => $faker->paragraph]);
             $institution->addMediaFromUrl(public_path("img/institutions/institution_$id.png"))->toMediaCollection('logo');
         }
+        User::find(2)->update(['institution_id' => 1]);
     }
 }
