@@ -37,7 +37,7 @@
                         </li>
 
                     </ul>
-                    <a href="#" class="btn_1 d-block">Enroll the course</a>
+                    <a href="{{ route('enroll.create', $course->id) }}" class="btn_1 d-block">Enroll the course</a>
                 </div>
             </div>
         </div>

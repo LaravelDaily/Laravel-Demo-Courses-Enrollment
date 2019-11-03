@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             DisciplinesTableSeeder::class,
             InstitutionsTableSeeder::class,
             CoursesTableSeeder::class,
+            EnrollmentsTableSeeder::class,
         ]);
     }
 }

@@ -11,7 +11,7 @@ class CreateEnrollmentsTable extends Migration
         Schema::create('enrollments', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('status');
+            $table->string('status')->default('awaiting');
 
             $table->timestamps();
 

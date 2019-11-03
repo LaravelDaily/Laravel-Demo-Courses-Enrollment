@@ -14,7 +14,7 @@
                     <div class="collapse navbar-collapse main-menu-item justify-content-end"
                         id="navbarSupportedContent">
                         <ul class="navbar-nav align-items-center">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="nav-item">
@@ -44,6 +44,18 @@
                                     </div>
                                 </li>
                             @endif
+                            @auth
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('enroll.myCourses') }}">My Courses</a>
+                                </li>
+                                <li class="d-none d-lg-block">
+                                    <a class="btn_1" href="#" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">Logout</a>
+                                    <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                                
+                            @endauth
                         </ul>
                     </div>
                 </nav>
