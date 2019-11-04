@@ -29,7 +29,7 @@
                                         <img src="{{ optional($course->institution->logo)->thumbnail ?? asset('img/no_image.png') }}" alt="" class="rounded-circle">
                                         <div class="author_info_text">
                                             <p>Institution</p>
-                                            <h5><a href="#">{{ $course->institution->name }}</a></h5>
+                                            <h5><a href="{{ route('courses.index') }}?institution={{ $course->institution->id }}">{{ $course->institution->name }}</a></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                         <div class="card">
                             <img src="{{ optional($institution->logo)->url ?? asset('img/no_image.png') }}" class="card-img-top" alt="{{ $institution->name }}">
                             <div class="card-body">
-                                <a href="blog.html">
+                                <a href="{{ route('courses.index') }}?institution={{ $institution->id }}">
                                     <h5 class="card-title">{{ $institution->name }}</h5>
                                 </a>
                                 <p>{{ Str::limit($institution->description, 100) }}</p>

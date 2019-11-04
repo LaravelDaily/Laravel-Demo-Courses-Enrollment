@@ -28,7 +28,7 @@
                                         <img src="{{ optional($course->institution->logo)->thumbnail ?? asset('img/no_image.png') }}" alt="" class="rounded-circle">
                                         <div class="author_info_text">
                                             <p>Institution</p>
-                                            <h5><a href="#">{{ $course->institution->name }}</a></h5>
+                                            <h5><a href="{{ route('courses.index') }}?institution={{ $course->institution->id }}">{{ $course->institution->name }}</a></h5>
                                         </div>
                                     </div>
                                 </div>
