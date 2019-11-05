@@ -13,7 +13,7 @@ class EnrollmentController extends Controller
     {
         $breadcrumb = "Enroll in $course->name course";
 
-        return view('enrollment.enroll', compact(['course', 'breadcrumb']));
+        return view('enrollment.enroll', compact('course', 'breadcrumb'));
     }
 
     public function store(Request $request, Course $course)
