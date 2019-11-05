@@ -2,7 +2,11 @@ Here's the original task description on Upwork:
 
 ![Laravel students registration](https://laraveldaily.com/wp-content/uploads/2019/11/Screen_Shot_2019-10-27_at_3.37.19_PM.png)
 
+---
+
 We implemented the task with the help of our [QuickAdminPanel](https://quickadminpanel.com) and front-end theme called [Etrain](https://colorlib.com/wp/template/etrain/) by [Colorlib](https://colorlib.com)
+
+---
 
 ![Laravel students courses list](https://laraveldaily.com/wp-content/uploads/2019/11/Screen-Shot-2019-11-05-at-9.46.36-AM.png)
 
@@ -20,7 +24,7 @@ We implemented the task with the help of our [QuickAdminPanel](https://quickadmi
 - Run __php artisan key:generate__
 - Run __php artisan migrate --seed__ (it has some seeded data for your testing)
 - That's it: launch the main URL. 
-- You can login to adminpanel by going go `/login` URL and login with credentials __admin@admin.com__ - __password__ or institurion user __institution@institution.com__ - __password__ 
+- You can login to adminpanel by going go `/login` URL and login with credentials __admin@admin.com__ - __password__ or institution user __institution@institution.com__ - __password__ 
 
 ## License
 
