@@ -16,6 +16,14 @@ We implemented the task with the help of our [QuickAdminPanel](https://quickadmi
 
 ---
 
+## Database Schema
+
+Created with [MySQL Workbench](https://www.mysql.com/products/workbench/) - see [video how to do it](https://www.youtube.com/watch?v=RbKEYDtkAJI)
+
+![Laravel students DB schema](https://laraveldaily.com/wp-content/uploads/2019/11/Screen-Shot-2019-11-05-at-10.07.17-AM.png)
+
+---
+
 ## How to use
 
 - Clone the repository with __git clone__
@@ -25,6 +33,8 @@ We implemented the task with the help of our [QuickAdminPanel](https://quickadmi
 - Run __php artisan migrate --seed__ (it has some seeded data for your testing)
 - That's it: launch the main URL. 
 - You can login to adminpanel by going go `/login` URL and login with credentials __admin@admin.com__ - __password__ or institution user __institution@institution.com__ - __password__ 
+
+---
 
 ## License
 
