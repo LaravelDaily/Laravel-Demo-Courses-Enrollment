@@ -9,3 +9,29 @@ We implemented the task with the help of our [QuickAdminPanel](https://quickadmi
 ![Laravel students registration form](https://laraveldaily.com/wp-content/uploads/2019/11/Screen-Shot-2019-11-05-at-9.48.27-AM.png)
 
 ![Laravel students adminpanel](https://laraveldaily.com/wp-content/uploads/2019/11/Screen-Shot-2019-11-05-at-9.47.36-AM.png)
+
+---
+
+## How to use
+
+- Clone the repository with __git clone__
+- Copy __.env.example__ file to __.env__ and edit database credentials there
+- Run __composer install__
+- Run __php artisan key:generate__
+- Run __php artisan migrate --seed__ (it has some seeded data for your testing)
+- That's it: launch the main URL. 
+- You can login to adminpanel by going go `/login` URL and login with credentials __admin@admin.com__ - __password__ or institurion user __institution@institution.com__ - __password__ 
+
+## License
+
+Basically, feel free to use and re-use any way you want.
+
+---
+
+## More from our LaravelDaily Team
+
+- Check out our adminpanel generator [QuickAdminPanel](https://quickadminpanel.com)
+- Read our [Blog with Laravel Tutorials](https://laraveldaily.com)
+- FREE E-book: [50 Laravel Quick Tips (and counting)](https://laraveldaily.com/free-e-book-40-laravel-quick-tips-and-counting/)
+- Subscribe to our [YouTube channel Laravel Business](https://www.youtube.com/channel/UCTuplgOBi6tJIlesIboymGA)
+- Enroll in our [Laravel Online Courses](https://laraveldaily.teachable.com/)
