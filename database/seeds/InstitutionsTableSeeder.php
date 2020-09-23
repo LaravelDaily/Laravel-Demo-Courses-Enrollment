@@ -18,7 +18,7 @@ class InstitutionsTableSeeder extends Seeder
         foreach(range(1,3) as $id)
         {
             $institution = Institution::create(['name' => $faker->unique()->company, 'description' => $faker->paragraph]);
-            $institution->addMediaFromUrl(public_path("img/institutions/institution_$id.png"))->toMediaCollection('logo');
+            $institution->addMedia(public_path("img/institutions/institution_$id.png"))->preservingOriginal()->toMediaCollection('logo');
         }
         User::find(2)->update(['institution_id' => 1]);
     }
