@@ -40,7 +40,7 @@ class CoursesTableSeeder extends Seeder
         {
             $id++;
             $course = Course::create($courses);
-            $course->addMediaFromUrl(public_path("img/course/course_$id.png"))->toMediaCollection('photo');
+            $course->addMedia(public_path("img/course/course_$id.png"))->preservingOriginal()->toMediaCollection('photo');
             $course->disciplines()->sync([$id]);
         }
     }
