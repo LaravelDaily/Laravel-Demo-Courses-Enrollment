@@ -24,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('partials.header', 'App\Http\View\Composers\MenuComposer');
+        View::composer('partials.header', 'App\View\Composers\MenuComposer');
     }
 }
